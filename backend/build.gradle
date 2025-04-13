@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.4' // Version compatible avec Java 17
+    id 'io.spring.dependency-management' version '1.1.4' // Mettre à jour
+}
+
+group = 'com.employee'
+version = '0.0.1-SNAPSHOT'
+
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'jakarta.persistence:jakarta.persistence-api'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.hibernate.orm:hibernate-core'
+    implementation 'org.projectlombok:lombok'
+
+    
+    // JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    
+    // Swagger UI
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+    
+    // PostgreSQL
+    runtimeOnly 'org.postgresql:postgresql'
+    
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.testcontainers:junit-jupiter'
+    testImplementation 'org.testcontainers:postgresql'
+}
+
+test {
+    useJUnitPlatform()
+}
