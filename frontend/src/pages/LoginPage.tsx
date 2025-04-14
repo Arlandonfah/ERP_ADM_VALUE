@@ -23,7 +23,7 @@ const LoginPage = () => {
   const onSubmit = async (data: FormData) => {
     try {
       const response = await login(data);
-      localStorage.setItem('token', response.token);
+      //localStorage.setItem('token', response.token);
       navigate('/dashboard');
     } catch (error) {
       console.error('Erreur lors de la connexion:', error);
