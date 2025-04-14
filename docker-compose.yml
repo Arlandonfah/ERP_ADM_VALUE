@@ -18,6 +18,8 @@ services:
       - db
     networks:
       - app
+    volumes:
+      - ./gradle-8.6-bin.zip:/root/.gradle/wrapper/dists/gradle-8.6-bin/somehash/gradle-8.6-bin.zip
 
   # Service Database (PostgreSQL)
   db:
