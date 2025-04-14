@@ -20,7 +20,7 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = (GenerationType) GenerationType.IDENTITY) //
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //
     private Long id;
 
     @Column(nullable = false, unique = true, updatable = false)
